@@ -1,1 +1,8 @@
 post http://localhost:3000/api/v1/players
+Content-Type: application/json
+
+  {
+    "phone": "123456789",
+    "name": "John Doe",
+    "email": "caam1406@gmail.com"
+  }
