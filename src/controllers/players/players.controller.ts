@@ -1,9 +1,12 @@
-import { Controller, Post } from '@nestjs/common';
-
+import { Body, Controller, Post } from '@nestjs/common';
+import { CreatePlayersDto } from 'src/dtos/createPlayer.dto';
 @Controller('api/v1/players')
 export class PlayersController {
   @Post()
-  async createPlayers(): Promise<string> {
-    return 'This action create one players';
+  async createPlayers(
+    @Body() createPlayersDto: CreatePlayersDto,
+  ): Promise<string> {
+    const { phone, email, name } = createPlayersDto;
+    return JSON.stringify({ phone, email, name });
   }
 }
